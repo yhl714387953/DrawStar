@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eAd-Wa-caX">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vHd-Gc-ekj">
+            <objects>
+                <viewController id="mOc-B6-B9B" customClass="ViewController" customModule="DrawStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BIE-F5-ZhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzv-bC-vWR" customClass="StarView" customModule="DrawStar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="288" width="414" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LZ5-7E-eSh"/>
+                                </constraints>
+                            </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-aK-n78">
+                                <rect key="frame" x="160" y="378" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepChange:" destination="mOc-B6-B9B" eventType="valueChanged" id="R0o-S4-hdr"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rzv-bC-vWR" firstAttribute="leading" secondItem="GjW-ZO-MQs" secondAttribute="leading" id="02c-Ay-w6J"/>
+                            <constraint firstItem="zKz-aK-n78" firstAttribute="centerX" secondItem="BIE-F5-ZhO" secondAttribute="centerX" id="Nyq-ao-aw9"/>
+                            <constraint firstItem="rzv-bC-vWR" firstAttribute="top" secondItem="GjW-ZO-MQs" secondAttribute="top" constant="200" id="fbT-o3-YdS"/>
+                            <constraint firstItem="zKz-aK-n78" firstAttribute="top" secondItem="rzv-bC-vWR" secondAttribute="bottom" constant="50" id="jru-h6-YCq"/>
+                            <constraint firstItem="GjW-ZO-MQs" firstAttribute="trailing" secondItem="rzv-bC-vWR" secondAttribute="trailing" id="o9e-32-GPH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GjW-ZO-MQs"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JOk-JK-c8Y"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="starView" destination="rzv-bC-vWR" id="aKp-m1-omi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVM-Cr-Fpi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X8Z-mJ-hYX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eAd-Wa-caX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r20-ii-hJq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mOc-B6-B9B" kind="relationship" relationship="rootViewController" id="1Oj-n2-KZX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfr-eE-ep8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+</document>
