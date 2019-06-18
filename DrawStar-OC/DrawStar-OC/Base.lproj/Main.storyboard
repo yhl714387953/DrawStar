@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cYd-Wx-ITR">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Gm2-4i-4cA">
+            <objects>
+                <viewController id="cXX-ok-GDW" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRB-QQ-TE1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOs-gE-1mH" customClass="StarView">
+                                <rect key="frame" x="0.0" y="288" width="414" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kGb-WH-UMz"/>
+                                </constraints>
+                            </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Q7g-DR-iad">
+                                <rect key="frame" x="160" y="378" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepChange:" destination="cXX-ok-GDW" eventType="valueChanged" id="n2v-gP-ygm"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q7g-DR-iad" firstAttribute="centerX" secondItem="ZRB-QQ-TE1" secondAttribute="centerX" id="7IU-Fy-nOW"/>
+                            <constraint firstItem="Q7g-DR-iad" firstAttribute="top" secondItem="vOs-gE-1mH" secondAttribute="bottom" constant="50" id="98F-FX-vVI"/>
+                            <constraint firstItem="vOs-gE-1mH" firstAttribute="top" secondItem="Uja-22-F0r" secondAttribute="top" constant="200" id="AUt-Kg-L3d"/>
+                            <constraint firstItem="vOs-gE-1mH" firstAttribute="leading" secondItem="Uja-22-F0r" secondAttribute="leading" id="ZcT-iW-7kv"/>
+                            <constraint firstItem="Uja-22-F0r" firstAttribute="trailing" secondItem="vOs-gE-1mH" secondAttribute="trailing" id="fCf-i4-tLq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uja-22-F0r"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MtE-I8-WwM"/>
+                    <connections>
+                        <outlet property="starView" destination="vOs-gE-1mH" id="IqE-97-5bO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxF-Ah-f7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2713.04347826087" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ogl-2D-wBQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cYd-Wx-ITR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fac-X3-Ken">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cXX-ok-GDW" kind="relationship" relationship="rootViewController" id="wsp-AW-VjL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyQ-Xn-8PS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802.8985507246377" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+</document>
