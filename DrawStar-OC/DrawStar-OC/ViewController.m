@@ -22,6 +22,8 @@
 }
 
 - (IBAction)stepChange:(UIStepper *)sender {
+    
+    self.starView.canSelect = YES;
     [self.starView drawStar:sender.value count:7];
 }
 

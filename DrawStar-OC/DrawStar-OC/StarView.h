@@ -15,8 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 /** <#description#> */
 @property (nonatomic, readonly) NSInteger maxStars;
 
+/** <#description#> */
+@property (nonatomic, readonly) NSInteger level;
+
 /** 星星的间距 */
 @property (nonatomic) CGFloat space;
+
+/** 是否可选择 默认NO */
+@property (nonatomic) BOOL canSelect;
 
 - (void)drawStar:(NSInteger)level count:(NSInteger)count;
 

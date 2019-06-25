@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func stepChange(_ sender: UIStepper) {
         
+        starView.canSelect = true
         starView.drawStar(level:Int(sender.value), count: 7)
     }
     
@@ -28,11 +29,15 @@ class ViewController: UIViewController {
 class StarView: UIView {
     
     open var space: CGFloat = 5
+    open var canSelect: Bool = false
     private(set) var maxStars: Int = 0//只读
+    private(set) var _level: Int = 0
     private var shapeLayers: [CAShapeLayer] = []//准备一个数组重用一下layer
     
     //    MARK: - public method
     open func drawStar(level: Int, count:Int){
+        
+        _level = level
         maxStars = count
         
         for i in 0...maxStars - 1 {
@@ -90,6 +95,26 @@ class StarView: UIView {
         }
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if(!canSelect){
+            return
+        }
+        
+        let touch = touches.first!
+        let point = touch.location(in: self)
+        var index = _level
+        for (i, starLayer) in shapeLayers.enumerated(){
+//            var starLayer = shapeLayers[i]
+            let width = starLayer.frame.size.width
+            let rect = CGRect(x: starLayer.frame.origin.x - width / 2.0, y: starLayer.frame.origin.y - width / 2.0, width: width, height: width)
+            if(rect.contains(point)){
+                index = i + 1
+            }
+        }
+        
+        drawStar(level: index, count: maxStars)
+    }
     
 }
 

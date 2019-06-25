@@ -38,6 +38,8 @@
 }
 
 - (void)drawStar:(NSInteger)level count:(NSInteger)count{
+    
+    _level = level;
     _maxStars = count;
     //    @"★ ★ ★ ★ ★";
     for (NSInteger i = 0; i < count; i++) {
@@ -102,6 +104,28 @@
     }
     
     return _shapeLayers;
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if (!self.canSelect) {
+        
+        return;
+    }
+    
+    UITouch* touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self];
+    NSInteger index = self.level;
+    for (int i = 0; i < self.shapeLayers.count; i++) {
+        CALayer* starLayer = self.shapeLayers[i];
+        CGFloat width = CGRectGetWidth(starLayer.frame);
+        CGRect rect = CGRectMake(starLayer.frame.origin.x - width / 2.0, starLayer.frame.origin.y - width / 2.0, width, width);
+        if (CGRectContainsPoint(rect, point)) {
+            index = i + 1;
+        }
+    }
+    
+    [self drawStar:index count:self.maxStars];
 }
 
 /*
