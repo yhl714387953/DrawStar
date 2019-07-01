@@ -53,3 +53,16 @@ if (index > (int)(self.shapeLayers.count) - 1) {
 ```
 
 期间还碰到一个问题： 在 `OC` 中用数组长度-1的问题，那就是长度 `count` 是 `NSUInteger` 类型的，-1就……就不是你想要的结果了，在 `Swift` 里是没有问题的。
+
+### 打分
+开启打分选项，就可以进行打分交互了，可以通过 `level` 属性获取到当前分值
+
+```
+/** 是否可选择 默认NO */
+@property (nonatomic) BOOL canSelect;
+```
+
+感谢您阅读完毕，如有疑问，欢迎添加QQ:**714387953**(蜗牛上高速)。
+**github**:[https://github.com/yhl714387953/DrawStar](https://github.com/yhl714387953/DrawStar)
+如果有错误，欢迎指正，一起切磋，共同进步
+如果喜欢可以**Follow、Star、Fork**，都是给我最大的鼓励。
