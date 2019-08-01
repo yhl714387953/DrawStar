@@ -4,7 +4,7 @@
 
 你这不是用符号打出来了么？还写它干啥？
 
-![连线图](image/3.png)
+<img src="image/3.png" width="300" align=center />
 
 思路：
 > * 计算五个顶点
@@ -13,7 +13,7 @@
 
 为了便于计算，以绿色视图左上角为坐标原点计算各个点，最后显示到黄色的视图上（绿色视图origin为黄色视图的中心点），如下图：
 
-![连线图](image/1.png)
+<img src="image/1.png" width="300" align=center />
 
 #### 计算五个顶点
 五角星中心即为外接圆的中心，假定圆的半径为 **r** ，可依次获得顶点 `A` `B` `C` `D` `E` 的坐标：
@@ -30,7 +30,8 @@
 
 #### UIBezierPath连接
 `move` 到起点，`addLine` 连接各个点。连接顺序依次按照 `A->C->E->B->D` **一笔画五角星的顺序** 去连接，`D->A` 闭合可以使用贝塞尔曲线的 `close` 方法（实测也可以不用调用），如下图：
-![连线图](image/2.png)
+
+<img src="image/2.png" width="300" align=center />
 
 #### 绘制到CAShapeLayer上
 创建一个 `shapeLayer`，图二中绿色的绘制layer。
